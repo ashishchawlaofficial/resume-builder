@@ -1,21 +1,29 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import Wrapper from "../common/layout/Wrapper";
-import { Box } from "@mantine/core";
 import EmptyDashboard from "../common/layout/EmptyDashboard";
+import FilledDashboard from "../ui/FilledDashboard";
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   configureBuilder,
   unsetLoader,
-} from "../../store/slices/userMetaSlice";
+  getBuilderData,
+} from "../../store/slices/builderSlice";
 
 const Dashboard = () => {
-  const [isEmpty, setIsEmpty] = useState(true);
   const userId = sessionStorage.getItem("userId");
-  const isLoading = useSelector((state) => state.meta.loading);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  // Subscribing to Resume data from Redux Store
+  const { loading, data, error } = useSelector((state) => state.builder);
+
+  console.log("Builder IDs: ", data);
+
+  useEffect(() => {
+    if (userId) dispatch(getBuilderData(userId));
+  }, [dispatch, userId]);
 
   const handleInit = () => {
     const builderId = uuidv4();
@@ -23,7 +31,7 @@ const Dashboard = () => {
       configureBuilder({
         builderId,
         userId,
-        endpointKey: "metaData/builderIDs",
+        endpointKey: "meta/builderIDs",
       })
     );
     setTimeout(() => {
@@ -36,17 +44,11 @@ const Dashboard = () => {
 
   return (
     <Wrapper>
-      <Box
-        component="section"
-        sx={{
-          height: "90vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        {isEmpty && <EmptyDashboard init={handleInit} isLoading={isLoading} />}
-      </Box>
+      {data.length === 0 ? (
+        <EmptyDashboard init={handleInit} isLoading={loading} />
+      ) : (
+        <FilledDashboard data={data} userId={userId} />
+      )}
     </Wrapper>
   );
 };

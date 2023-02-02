@@ -78,7 +78,6 @@ const Auth = (props) => {
     } else {
       dispatch(signInUser(email, password));
     }
-    console.log("Error: ", error, user);
     // IMP: should change this to return redirect in future
     if (location.state?.from) navigate(location.state.from);
   };

@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 // Reducer Imports
 import authReducer from "./slices/authSlice";
-import userMetaReducer from "./slices/userMetaSlice";
+import builderReducer from "./slices/builderSlice";
 import personalReducer from "./slices/personalInfoSlice";
 import educationReducer from "./slices/educationSlice";
 import employmentReducer from "./slices/employmentSlice";
@@ -13,7 +13,7 @@ import miscReducer from "./slices/miscSlice";
 const store = configureStore({
   reducer: {
     auth: authReducer,
-    meta: userMetaReducer,
+    builder: builderReducer,
     personal: personalReducer,
     education: educationReducer,
     employment: employmentReducer,

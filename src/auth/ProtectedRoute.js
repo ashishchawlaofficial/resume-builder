@@ -5,7 +5,6 @@ const Protected = () => {
   const location = useLocation();
   const { user, isLoggedIn } = useSelector((state) => state.auth);
   const userId = sessionStorage.getItem("userId");
-  console.log("Is Logged In: ", isLoggedIn, user);
 
   return isLoggedIn || userId ? (
     <Outlet />

@@ -86,7 +86,7 @@ const MiscForm = () => {
             setCollection={setLanguages}
             placeholderText="Enter Languages"
             label="Preferred Languages"
-            collection={data.languages}
+            collection={data?.languages}
           />
         </Grid.Col>
         <Grid.Col span={12}>
@@ -94,7 +94,7 @@ const MiscForm = () => {
             setCollection={setInterests}
             placeholderText="Enter Interests / Hobbies"
             label="Interests / Hobbies"
-            collection={data.interests}
+            collection={data?.interests}
           />
         </Grid.Col>
       </Grid>

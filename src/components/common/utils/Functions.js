@@ -27,6 +27,20 @@ export const flattenResponse = (data) => {
   return result;
 };
 
+// Converting Object to Array
+export const objToArr = (data) => {
+  return Object.values(data).map((item) => item);
+};
+
+// Converting Object to Array of Objects
+export const objToArrObj = (data) => {
+  const arr = Object.entries(data).map((item) => {
+    console.log("ObjArr: ", item);
+    return { ...item };
+  });
+  return arr;
+};
+
 // Checks if an object is empty
 export const isEmptyObj = (obj) => Object.keys(obj).length === 0;
 // Checks if an array is empty
