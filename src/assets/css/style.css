@@ -1,0 +1,40 @@
+body {
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+}
+.unstyledInput {
+  border: none;
+  font-size: 14px;
+}
+.unstyledInput:focus-visible {
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+.chipIcon {
+  position: absolute;
+  top: 3px;
+}
+.unstyledInput::placeholder {
+  color: #acb5bc;
+}
+.skills {
+  padding-left: 0;
+  margin: 10px 0 0;
+}
+.skills li {
+  list-style-type: none;
+  display: inline-block;
+  border: 1px solid #ddd;
+  padding: 6px 15px;
+  margin-right: 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+.skills li span {
+  display: inline-block;
+  border-left: 1px solid #ddd;
+  padding-left: 7px;
+  margin-left: 5px;
+}
