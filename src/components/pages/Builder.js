@@ -1,6 +1,7 @@
 import { Box, Flex } from "@mantine/core";
 import Editor from "../builder/Editor";
 import Wrapper from "../common/layout/Wrapper";
+import Preview from "../preview/Preview";
 
 const Builder = () => {
   return (
@@ -14,7 +15,7 @@ const Builder = () => {
             id="preview"
             sx={{ width: "40%", height: "100vh", backgroundColor: "#f5f5f5" }}
           >
-            Preview
+            <Preview />
           </Box>
         </Flex>
       </Box>

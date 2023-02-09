@@ -12,7 +12,7 @@ import ResumeCard from "../ui/ResumeCard";
 import TemplateImage from "../../assets/img/resume_template01.jpg";
 import { BsPlusCircleFill } from "react-icons/bs";
 
-const FilledDashboard = ({ data, userId }) => {
+const FilledDashboard = ({ data, userId, addNew }) => {
   return (
     <Box component="section" sx={{ margin: "50px 50px 0" }}>
       <Container fluid mb={30}>
@@ -30,7 +30,7 @@ const FilledDashboard = ({ data, userId }) => {
             <Button
               variant="subtle"
               leftIcon={<BsPlusCircleFill />}
-              // onClick={() => setOpened(true)}
+              onClick={addNew}
             >
               Add New
             </Button>

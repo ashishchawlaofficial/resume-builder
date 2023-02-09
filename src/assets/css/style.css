@@ -38,3 +38,9 @@ body {
   padding-left: 7px;
   margin-left: 5px;
 }
+.newResumeForm input[type=radio] {
+  display: none;
+}
+.newResumeForm .mantine-Radio-root[data-checked=true] {
+  border-color: rgb(25, 113, 194);
+}

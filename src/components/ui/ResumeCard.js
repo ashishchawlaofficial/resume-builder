@@ -28,6 +28,10 @@ const useStyles = createStyles((_params) => {
       justifyContent: "space-between",
       alignItems: "flex-start",
       backgroundSize: "cover",
+      transition: "0.3s transform ease",
+      [`&:hover`]: {
+        transform: "scale(1.03)",
+      },
     },
 
     title: {
